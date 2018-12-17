@@ -46,6 +46,9 @@
             // 
             // ribbonControl1
             // 
+            this.ribbonControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ribbonControl1.Dock = System.Windows.Forms.DockStyle.None;
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
@@ -145,6 +148,8 @@
             this.btnArama.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnArama.ImageOptions.Image")));
             this.btnArama.ItemAppearance.Normal.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnArama.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnArama.ItemAppearance.Normal.Options.UseTextOptions = true;
+            this.btnArama.ItemAppearance.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
             this.btnArama.Name = "btnArama";
             this.btnArama.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));

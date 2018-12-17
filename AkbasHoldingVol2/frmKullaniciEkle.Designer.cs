@@ -44,6 +44,7 @@
             // 
             // btnEkle
             // 
+            this.btnEkle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnEkle.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnEkle.Appearance.Options.UseFont = true;
             this.btnEkle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnEkle.ImageOptions.SvgImage")));
@@ -51,13 +52,13 @@
             this.btnEkle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnEkle.Name = "btnEkle";
             this.btnEkle.Size = new System.Drawing.Size(156, 56);
-            this.btnEkle.TabIndex = 15;
+            this.btnEkle.TabIndex = 4;
             this.btnEkle.Text = "EKLE";
             this.btnEkle.Click += new System.EventHandler(this.btnEkle_Click);
             // 
             // cmbDepartman
             // 
-            this.cmbDepartman.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cmbDepartman.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cmbDepartman.Location = new System.Drawing.Point(761, 184);
             this.cmbDepartman.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbDepartman.Name = "cmbDepartman";
@@ -71,29 +72,31 @@
             "Planlama",
             "Ar-Ge"});
             this.cmbDepartman.Size = new System.Drawing.Size(141, 22);
-            this.cmbDepartman.TabIndex = 14;
+            this.cmbDepartman.TabIndex = 3;
             // 
             // txtSifre
             // 
-            this.txtSifre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtSifre.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtSifre.Location = new System.Drawing.Point(371, 180);
             this.txtSifre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtSifre.Name = "txtSifre";
             this.txtSifre.Size = new System.Drawing.Size(112, 28);
-            this.txtSifre.TabIndex = 13;
+            this.txtSifre.TabIndex = 1;
+            this.txtSifre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSifre_KeyPress);
             // 
             // txtKullaniciAdi
             // 
-            this.txtKullaniciAdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.txtKullaniciAdi.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtKullaniciAdi.Location = new System.Drawing.Point(371, 129);
             this.txtKullaniciAdi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtKullaniciAdi.Name = "txtKullaniciAdi";
             this.txtKullaniciAdi.Size = new System.Drawing.Size(112, 28);
-            this.txtKullaniciAdi.TabIndex = 12;
+            this.txtKullaniciAdi.TabIndex = 0;
+            this.txtKullaniciAdi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtKullaniciAdi_KeyPress);
             // 
             // cmbYetki
             // 
-            this.cmbYetki.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cmbYetki.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.cmbYetki.Location = new System.Drawing.Point(761, 128);
             this.cmbYetki.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cmbYetki.Name = "cmbYetki";
@@ -104,11 +107,11 @@
             "Satış Sorumlusu",
             "Bölüm Başkanı"});
             this.cmbYetki.Size = new System.Drawing.Size(141, 22);
-            this.cmbYetki.TabIndex = 11;
+            this.cmbYetki.TabIndex = 2;
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(570, 184);
             this.label4.Name = "label4";
@@ -118,7 +121,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(570, 133);
             this.label3.Name = "label3";
@@ -128,7 +131,7 @@
             // 
             // label2
             // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(173, 184);
             this.label2.Name = "label2";
@@ -138,7 +141,7 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(173, 133);
             this.label1.Name = "label1";
@@ -165,7 +168,7 @@
             this.MinimizeBox = false;
             this.Name = "frmKullaniciEkle";
             this.ShowIcon = false;
-            this.Text = "frmKullaniciEkle";
+            this.Text = "KULLANICI EKLE";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.cmbDepartman.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbYetki.Properties)).EndInit();

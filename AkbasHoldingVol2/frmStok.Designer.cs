@@ -30,27 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grdStok = new DevExpress.XtraGrid.GridControl();
-            this.spStokBilgiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.spStokBilgiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.akbasHoldingTestDataSet6 = new AkbasHoldingVol2.AkbasHoldingTestDataSet6();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colUrunID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colFirma = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUrun = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAdet = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAktiflikDurumu = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.akbasHoldingTestDataSet = new AkbasHoldingVol2.AkbasHoldingTestDataSet();
-            this.spStokBilgiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.sp_StokBilgiTableAdapter = new AkbasHoldingVol2.AkbasHoldingTestDataSetTableAdapters.sp_StokBilgiTableAdapter();
+            this.sp_StokBilgiTableAdapter1 = new AkbasHoldingVol2.AkbasHoldingTestDataSet6TableAdapters.sp_StokBilgiTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdStok)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spStokBilgiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spStokBilgiBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.akbasHoldingTestDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.akbasHoldingTestDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spStokBilgiBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // grdStok
             // 
-            this.grdStok.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grdStok.DataSource = this.spStokBilgiBindingSource1;
+            this.grdStok.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.grdStok.DataSource = this.spStokBilgiBindingSource2;
             this.grdStok.Location = new System.Drawing.Point(12, 12);
             this.grdStok.MainView = this.gridView1;
             this.grdStok.Name = "grdStok";
@@ -59,9 +57,15 @@
             this.grdStok.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
-            // spStokBilgiBindingSource
+            // spStokBilgiBindingSource2
             // 
-            this.spStokBilgiBindingSource.DataMember = "sp_StokBilgi";
+            this.spStokBilgiBindingSource2.DataMember = "sp_StokBilgi";
+            this.spStokBilgiBindingSource2.DataSource = this.akbasHoldingTestDataSet6;
+            // 
+            // akbasHoldingTestDataSet6
+            // 
+            this.akbasHoldingTestDataSet6.DataSetName = "AkbasHoldingTestDataSet6";
+            this.akbasHoldingTestDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridView1
             // 
@@ -126,19 +130,9 @@
             this.colAktiflikDurumu.VisibleIndex = 4;
             this.colAktiflikDurumu.Width = 94;
             // 
-            // akbasHoldingTestDataSet
+            // sp_StokBilgiTableAdapter1
             // 
-            this.akbasHoldingTestDataSet.DataSetName = "AkbasHoldingTestDataSet";
-            this.akbasHoldingTestDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // spStokBilgiBindingSource1
-            // 
-            this.spStokBilgiBindingSource1.DataMember = "sp_StokBilgi";
-            this.spStokBilgiBindingSource1.DataSource = this.akbasHoldingTestDataSet;
-            // 
-            // sp_StokBilgiTableAdapter
-            // 
-            this.sp_StokBilgiTableAdapter.ClearBeforeFill = true;
+            this.sp_StokBilgiTableAdapter1.ClearBeforeFill = true;
             // 
             // frmStok
             // 
@@ -154,10 +148,9 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmStok_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdStok)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spStokBilgiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spStokBilgiBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.akbasHoldingTestDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.akbasHoldingTestDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spStokBilgiBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -166,16 +159,14 @@
 
         private DevExpress.XtraGrid.GridControl grdStok;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-     //   private AkbasHoldingDataSet2 akbasHoldingDataSet2;
-        private System.Windows.Forms.BindingSource spStokBilgiBindingSource;
      //   private AkbasHoldingDataSet2TableAdapters.sp_StokBilgiTableAdapter sp_StokBilgiTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colUrunID;
         private DevExpress.XtraGrid.Columns.GridColumn colFirma;
         private DevExpress.XtraGrid.Columns.GridColumn colUrun;
         private DevExpress.XtraGrid.Columns.GridColumn colAdet;
         private DevExpress.XtraGrid.Columns.GridColumn colAktiflikDurumu;
-        private AkbasHoldingTestDataSet akbasHoldingTestDataSet;
-        private System.Windows.Forms.BindingSource spStokBilgiBindingSource1;
-        private AkbasHoldingTestDataSetTableAdapters.sp_StokBilgiTableAdapter sp_StokBilgiTableAdapter;
+        private AkbasHoldingTestDataSet6 akbasHoldingTestDataSet6;
+        private System.Windows.Forms.BindingSource spStokBilgiBindingSource2;
+        private AkbasHoldingTestDataSet6TableAdapters.sp_StokBilgiTableAdapter sp_StokBilgiTableAdapter1;
     }
 }

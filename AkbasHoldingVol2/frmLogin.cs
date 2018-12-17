@@ -18,13 +18,6 @@ namespace AkbasHoldingVol2
         {
             InitializeComponent();
         }
-        
-
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-
-        }
-
         SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-2RPJPRH;Initial Catalog=AkbasHoldingTest;Integrated Security=True");
 
         private void btnGiris_Click(object sender, EventArgs e)
@@ -53,28 +46,26 @@ namespace AkbasHoldingVol2
                     yetki = "";
                 if (yetki != "")
                 {
-                    XtraMessageBox.Show("" + yetki + " yetkisi ile giriş yapıldı", "Giriş Başarılı", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("" + yetki + " yetkisi ile giriş yapıldı", "Giriş Başarılı", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     this.Close();
                 }
                 else
                 {
-                    XtraMessageBox.Show("Hatalı Kullanıcı Adı yada Şifre", "Giriş Başarısız", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Hatalı Kullanıcı Adı yada Şifre", "Giriş Başarısız", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 baglanti.Close();
             }
             else
-                XtraMessageBox.Show("Boş Alan Bırakılamaz !", "Giriş Başarısız", MessageBoxButtons.OK);
-
-
+                XtraMessageBox.Show("Boş Alan Bırakılamaz !", "Giriş Başarısız", MessageBoxButtons.OK,MessageBoxIcon.Warning);
         }
 
-        private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e) //KULLANICI ADINA SADECE KARAKTER GİRİLEBİLİR
         {
             e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar)
                  && !char.IsSeparator(e.KeyChar);
         }
 
-        private void txtSifre_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtSifre_KeyPress(object sender, KeyPressEventArgs e) //ŞİFRE KISMINA SADECE SAYI GİRİLEBİLİR
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }

@@ -27,12 +27,13 @@ namespace AkbasHoldingVol2
         frmAtikKontrol frmAtikKontrol;
         frmKullaniciEkle frmKullaniciEkle;
         frmStok frmStok;
+        frmRaporIslem frmRaporIslem;
 
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormKapatma();
             Login.yetki = -1; //Her logine tıklandığında cıkış işlemi yapılacak
-            Login.depID = -1;
+            Login.depID = -1; //Her girişte depID bilgisi tutulacak
             if (frmLogin == null)
             {
                 frmLogin = new frmLogin();
@@ -61,20 +62,26 @@ namespace AkbasHoldingVol2
         private void btnSatinAlma_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormKapatma();
-            if (Login.yetki == 0 || Login.yetki == 1)
+            if(Login.yetki==-1)
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                if (frmSatinAlma == null)
+                if (Login.yetki == 0 || Login.yetki == 1)   //Satın alma işlemi için yetki kontrolü 
                 {
-                    frmSatinAlma = new frmSatinAlma();
-                    frmSatinAlma.MdiParent = this;
-                    frmSatinAlma.FormClosed += frmSatinAlmaClosed;
-                    frmSatinAlma.Show();
+                    if (frmSatinAlma == null)
+                    {
+                        frmSatinAlma = new frmSatinAlma();
+                        frmSatinAlma.MdiParent = this;
+                        frmSatinAlma.FormClosed += frmSatinAlmaClosed;
+                        frmSatinAlma.Show();
+                    }
+                    else
+                        frmSatinAlma.Show();
                 }
                 else
-                    frmSatinAlma.Show();
+                    XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
             }
-            else
-                XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK);
         }
         private void frmSatinAlmaClosed(object sender, FormClosedEventArgs e)
         {
@@ -84,20 +91,25 @@ namespace AkbasHoldingVol2
         private void btnZimmet_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormKapatma();
-            if (Login.yetki == 0 || Login.yetki == 1)
+            if(Login.yetki==-1)
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                if (frmZimmet == null)
+                if (Login.yetki == 0 || Login.yetki == 1) //Zimmetleme işlemi için yetki kontrolü
                 {
-                    frmZimmet = new frmZimmet();
-                    frmZimmet.MdiParent = this;
-                    frmZimmet.FormClosed += frmZimmetClosed;
-                    frmZimmet.Show();
+                    if (frmZimmet == null)
+                    {
+                        frmZimmet = new frmZimmet();
+                        frmZimmet.MdiParent = this;
+                        frmZimmet.FormClosed += frmZimmetClosed;
+                        frmZimmet.Show();
+                    }
+                    else
+                        frmZimmet.Show();
                 }
                 else
-                    frmZimmet.Show();
+                    XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-            else
-                XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK);
         }
         private void frmZimmetClosed(object sender, FormClosedEventArgs e)
         {
@@ -107,20 +119,25 @@ namespace AkbasHoldingVol2
         private void btnAtikKontrol_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormKapatma();
-            if (Login.yetki == 0 || Login.yetki == 1)
+            if(Login.yetki==-1)
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                if (frmAtikKontrol == null)
+                if (Login.yetki == 0 || Login.yetki == 1) //Atık kontrol işlemi için yetki kontrolü
                 {
-                    frmAtikKontrol = new frmAtikKontrol();
-                    frmAtikKontrol.MdiParent = this;
-                    frmAtikKontrol.FormClosed += frmAtikKontrolClosed;
-                    frmAtikKontrol.Show();
+                    if (frmAtikKontrol == null)
+                    {
+                        frmAtikKontrol = new frmAtikKontrol();
+                        frmAtikKontrol.MdiParent = this;
+                        frmAtikKontrol.FormClosed += frmAtikKontrolClosed;
+                        frmAtikKontrol.Show();
+                    }
+                    else
+                        frmAtikKontrol.Show();
                 }
                 else
-                    frmAtikKontrol.Show();
+                    XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-            else
-                XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK);
         }
         private void frmAtikKontrolClosed(object sender, FormClosedEventArgs e)
         {
@@ -132,31 +149,48 @@ namespace AkbasHoldingVol2
             FormKapatma();
             if (Login.yetki ==-1)
             {
-                XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Giriş Yapmanız Gerekmektedir !", "Giriş Gerekli", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
-                //raporislem formu acılacak
+                if (frmRaporIslem == null)
+                {
+                    frmRaporIslem = new frmRaporIslem();
+                    frmRaporIslem.MdiParent = this;
+                    frmRaporIslem.FormClosed += frmRaporIslemClosed;
+                    frmRaporIslem.Show();
+                }
+                else
+                    frmRaporIslem.Show();
             }
+        }
+        private void frmRaporIslemClosed(object sender, FormClosedEventArgs e)
+        {
+            frmRaporIslem = null;
         }
 
         private void btnStok_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormKapatma();
-            if (Login.yetki == 0 || Login.yetki == 1)
+            if(Login.yetki==-1)
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                if (frmStok == null)
+                if (Login.yetki == 0 || Login.yetki == 1) //Stok görüntüleme işlemi için yetki kontrolü
                 {
-                    frmStok = new frmStok();
-                    frmStok.MdiParent = this;
-                    frmStok.FormClosed += frmStokClosed;
-                    frmStok.Show();
+                    if (frmStok == null)
+                    {
+                        frmStok = new frmStok();
+                        frmStok.MdiParent = this;
+                        frmStok.FormClosed += frmStokClosed;
+                        frmStok.Show();
+                    }
+                    else
+                        frmStok.Show();
                 }
                 else
-                    frmStok.Show();
+                    XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
-            else
-                XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK);
         }
         private void frmStokClosed(object sender, FormClosedEventArgs e)
         {
@@ -166,20 +200,25 @@ namespace AkbasHoldingVol2
         private void btnKullaniciEkle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             FormKapatma();
-            if (Login.yetki == 0 )
+            if(Login.yetki==-1)
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
             {
-                if (frmKullaniciEkle == null)
+                if (Login.yetki == 0 ) //Kullanıcı ekleme işlemi için yetki kontrolü
                 {
-                    frmKullaniciEkle = new frmKullaniciEkle();
-                    frmKullaniciEkle.MdiParent = this;
-                    frmKullaniciEkle.FormClosed += frmKullaniciEkleClosed;
-                    frmKullaniciEkle.Show();
+                    if (frmKullaniciEkle == null)
+                    {
+                        frmKullaniciEkle = new frmKullaniciEkle();
+                        frmKullaniciEkle.MdiParent = this;
+                        frmKullaniciEkle.FormClosed += frmKullaniciEkleClosed;
+                        frmKullaniciEkle.Show();
+                    }
+                    else
+                        frmKullaniciEkle.Show();
                 }
                 else
-                    frmKullaniciEkle.Show();
+                    XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK,MessageBoxIcon.Warning); 
             }
-            else
-                XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK); 
         } 
         private void frmKullaniciEkleClosed(object sender, FormClosedEventArgs e)
         {
@@ -191,7 +230,7 @@ namespace AkbasHoldingVol2
             FormKapatma();
             if (Login.yetki == -1)
             {
-                XtraMessageBox.Show("Öncelikle Giriş Yapmalısınız", "Yetki Hatası", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Öncelikle Giriş Yapmalısınız", "Yetki Hatası", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
             else
             {
@@ -214,8 +253,6 @@ namespace AkbasHoldingVol2
 
         private void FormKapatma()
         {
-            if(frmLogin!=null)
-                frmLogin.Close();
             if(frmAtikKontrol!=null)
                 frmAtikKontrol.Close();
             if (frmKullaniciEkle != null)
@@ -228,6 +265,8 @@ namespace AkbasHoldingVol2
                 frmStok.Close();
             if (frmZimmet != null)
                 frmZimmet.Close();
+            if (frmRaporIslem != null)
+                frmRaporIslem.Close();
         }
     }
 }

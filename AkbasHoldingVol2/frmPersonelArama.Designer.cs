@@ -42,14 +42,17 @@
             this.txtAd = new System.Windows.Forms.TextBox();
             this.txtDepartman = new System.Windows.Forms.TextBox();
             this.txtSoyad = new System.Windows.Forms.TextBox();
+            this.btnPersonelRapor = new DevExpress.XtraEditors.SimpleButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPersonelSoyad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.lstZimmetEsya)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(71, 62);
+            this.label1.Location = new System.Drawing.Point(86, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 22);
             this.label1.TabIndex = 0;
@@ -57,7 +60,7 @@
             // 
             // txtPersonelAd
             // 
-            this.txtPersonelAd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPersonelAd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtPersonelAd.Location = new System.Drawing.Point(206, 61);
             this.txtPersonelAd.Name = "txtPersonelAd";
             this.txtPersonelAd.Size = new System.Drawing.Size(100, 28);
@@ -65,12 +68,12 @@
             // 
             // btnArama
             // 
-            this.btnArama.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnArama.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnArama.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnArama.Appearance.Options.UseFont = true;
             this.btnArama.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
-            this.btnArama.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("simpleButton1.ImageOptions.SvgImage")));
-            this.btnArama.Location = new System.Drawing.Point(412, 55);
+            this.btnArama.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnArama.ImageOptions.SvgImage")));
+            this.btnArama.Location = new System.Drawing.Point(619, 108);
             this.btnArama.Name = "btnArama";
             this.btnArama.Size = new System.Drawing.Size(141, 35);
             this.btnArama.TabIndex = 2;
@@ -79,7 +82,7 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Monotype Corsiva", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.Location = new System.Drawing.Point(73, 225);
@@ -90,7 +93,7 @@
             // 
             // lstZimmetEsya
             // 
-            this.lstZimmetEsya.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lstZimmetEsya.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lstZimmetEsya.Location = new System.Drawing.Point(79, 302);
             this.lstZimmetEsya.Name = "lstZimmetEsya";
             this.lstZimmetEsya.Size = new System.Drawing.Size(474, 161);
@@ -98,9 +101,9 @@
             // 
             // lblPersonelID
             // 
-            this.lblPersonelID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPersonelID.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblPersonelID.AutoSize = true;
-            this.lblPersonelID.Location = new System.Drawing.Point(96, 106);
+            this.lblPersonelID.Location = new System.Drawing.Point(86, 108);
             this.lblPersonelID.Name = "lblPersonelID";
             this.lblPersonelID.Size = new System.Drawing.Size(92, 22);
             this.lblPersonelID.TabIndex = 7;
@@ -108,9 +111,9 @@
             // 
             // lblPersonelAd
             // 
-            this.lblPersonelAd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblPersonelAd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.lblPersonelAd.AutoSize = true;
-            this.lblPersonelAd.Location = new System.Drawing.Point(96, 152);
+            this.lblPersonelAd.Location = new System.Drawing.Point(86, 155);
             this.lblPersonelAd.Name = "lblPersonelAd";
             this.lblPersonelAd.Size = new System.Drawing.Size(30, 22);
             this.lblPersonelAd.TabIndex = 7;
@@ -118,7 +121,7 @@
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(333, 106);
             this.label5.Name = "label5";
@@ -128,7 +131,7 @@
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(333, 152);
             this.label6.Name = "label6";
@@ -138,7 +141,7 @@
             // 
             // txtPersonelID
             // 
-            this.txtPersonelID.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPersonelID.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtPersonelID.Location = new System.Drawing.Point(206, 105);
             this.txtPersonelID.Name = "txtPersonelID";
             this.txtPersonelID.ReadOnly = true;
@@ -147,7 +150,7 @@
             // 
             // txtAd
             // 
-            this.txtAd.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtAd.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtAd.Location = new System.Drawing.Point(206, 152);
             this.txtAd.Name = "txtAd";
             this.txtAd.ReadOnly = true;
@@ -156,7 +159,7 @@
             // 
             // txtDepartman
             // 
-            this.txtDepartman.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtDepartman.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtDepartman.Location = new System.Drawing.Point(453, 105);
             this.txtDepartman.Name = "txtDepartman";
             this.txtDepartman.ReadOnly = true;
@@ -165,18 +168,53 @@
             // 
             // txtSoyad
             // 
-            this.txtSoyad.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSoyad.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.txtSoyad.Location = new System.Drawing.Point(453, 151);
             this.txtSoyad.Name = "txtSoyad";
             this.txtSoyad.ReadOnly = true;
             this.txtSoyad.Size = new System.Drawing.Size(100, 28);
             this.txtSoyad.TabIndex = 11;
             // 
+            // btnPersonelRapor
+            // 
+            this.btnPersonelRapor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnPersonelRapor.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPersonelRapor.Appearance.Options.UseFont = true;
+            this.btnPersonelRapor.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.btnPersonelRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelRapor.ImageOptions.Image")));
+            this.btnPersonelRapor.Location = new System.Drawing.Point(600, 179);
+            this.btnPersonelRapor.Name = "btnPersonelRapor";
+            this.btnPersonelRapor.Size = new System.Drawing.Size(173, 35);
+            this.btnPersonelRapor.TabIndex = 12;
+            this.btnPersonelRapor.Text = "RAPOR AL";
+            this.btnPersonelRapor.Click += new System.EventHandler(this.btnPersonelRapor_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(337, 61);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(113, 22);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Personel Soyad";
+            // 
+            // txtPersonelSoyad
+            // 
+            this.txtPersonelSoyad.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.txtPersonelSoyad.Location = new System.Drawing.Point(453, 61);
+            this.txtPersonelSoyad.Name = "txtPersonelSoyad";
+            this.txtPersonelSoyad.Size = new System.Drawing.Size(100, 28);
+            this.txtPersonelSoyad.TabIndex = 2;
+            // 
             // frmPersonelArama
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 591);
+            this.Controls.Add(this.txtPersonelSoyad);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnPersonelRapor);
             this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.txtDepartman);
             this.Controls.Add(this.txtAd);
@@ -197,6 +235,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PERSONEL ARAMA";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmPersonelArama_Load);
             ((System.ComponentModel.ISupportInitialize)(this.lstZimmetEsya)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -218,5 +257,8 @@
         private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.TextBox txtDepartman;
         private System.Windows.Forms.TextBox txtSoyad;
+        private DevExpress.XtraEditors.SimpleButton btnPersonelRapor;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtPersonelSoyad;
     }
 }

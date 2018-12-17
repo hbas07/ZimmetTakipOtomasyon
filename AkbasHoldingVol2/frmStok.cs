@@ -20,9 +20,7 @@ namespace AkbasHoldingVol2
         private void frmStok_Load(object sender, EventArgs e)
         {
             // TODO: Bu kod satırı 'akbasHoldingTestDataSet.sp_StokBilgi' tablosuna veri yükler. Bunu gerektiği şekilde taşıyabilir, veya kaldırabilirsiniz.
-            this.sp_StokBilgiTableAdapter.Fill(this.akbasHoldingTestDataSet.sp_StokBilgi);
-           
-            
+            this.sp_StokBilgiTableAdapter1.Fill(this.akbasHoldingTestDataSet6.sp_StokBilgi);
         }
     }
 }

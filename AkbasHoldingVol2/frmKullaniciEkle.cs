@@ -23,18 +23,49 @@ namespace AkbasHoldingVol2
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            int yetkiID = cmbYetki.SelectedIndex ;
-            int departmanID = cmbDepartman.SelectedIndex+1;
-            SqlCommand komut = new SqlCommand("INSERT tblKullanici VALUES (@p1,@p2,@p3,@p4)", baglanti);
-            komut.Parameters.AddWithValue("@p1",txtKullaniciAdi.Text);
-            komut.Parameters.AddWithValue("@p2",Convert.ToInt32(txtSifre.Text));
-            komut.Parameters.AddWithValue("@p3",yetkiID);
-            komut.Parameters.AddWithValue("@p4",departmanID);
+            Boolean isimkontrol = true;
             baglanti.Open();
-            komut.ExecuteNonQuery();
+            SqlCommand komut1 = new SqlCommand("SELECT KullaniciAdi FROM tblKullanici", baglanti);
+            SqlDataReader dr = komut1.ExecuteReader();
+            while(dr.Read())
+            {
+                if (dr[0].ToString() == txtKullaniciAdi.Text)
+                    isimkontrol = false;
+            }
             baglanti.Close();
-            XtraMessageBox.Show("Kullanıcı eklendi !", "İşlem başarılı ", MessageBoxButtons.OK);
+            if (cmbYetki.SelectedIndex!=-1 && cmbDepartman.SelectedIndex!=-1 && txtKullaniciAdi.Text!="" && txtSifre.Text!="")
+            { 
+                if(isimkontrol)
+                {
+                    int yetkiID = cmbYetki.SelectedIndex ;
+                    int departmanID = cmbDepartman.SelectedIndex + 1;
+                    SqlCommand komut = new SqlCommand("INSERT tblKullanici VALUES (@p1,@p2,@p3,@p4)", baglanti);
+                    komut.Parameters.AddWithValue("@p1",txtKullaniciAdi.Text);
+                    komut.Parameters.AddWithValue("@p2",Convert.ToInt32(txtSifre.Text));
+                    komut.Parameters.AddWithValue("@p3",yetkiID);
+                    komut.Parameters.AddWithValue("@p4",departmanID);
+                    baglanti.Open();
+                    komut.ExecuteNonQuery();
+                    baglanti.Close();
+                    XtraMessageBox.Show("Kullanıcı eklendi !", "İşlem başarılı ", MessageBoxButtons.OK);
+                }
+                else
+                    XtraMessageBox.Show("Bu Kullanıcı Adı Kullanılmakta !", "İşlem başarısız ", MessageBoxButtons.OK);
+            }
+            else
+                XtraMessageBox.Show("Kullanıcı ekleme başarısız.Tüm alanları doldurmanız gerekmektedir !", "İşlem başarısız ", MessageBoxButtons.OK);
 
+
+        }
+        private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar)
+                 && !char.IsSeparator(e.KeyChar);
+        }
+
+        private void txtSifre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
     }
 }
