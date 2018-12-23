@@ -28,6 +28,8 @@ namespace AkbasHoldingVol2
         frmKullaniciEkle frmKullaniciEkle;
         frmStok frmStok;
         frmRaporIslem frmRaporIslem;
+        frmDepartmanEkle frmDepartmanEkle;
+        frmPersonelEkle frmPersonelEkle;
 
         private void btnLogin_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
@@ -149,7 +151,7 @@ namespace AkbasHoldingVol2
             FormKapatma();
             if (Login.yetki ==-1)
             {
-                XtraMessageBox.Show("Giriş Yapmanız Gerekmektedir !", "Giriş Gerekli", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -230,7 +232,7 @@ namespace AkbasHoldingVol2
             FormKapatma();
             if (Login.yetki == -1)
             {
-                XtraMessageBox.Show("Öncelikle Giriş Yapmalısınız", "Yetki Hatası", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -251,10 +253,69 @@ namespace AkbasHoldingVol2
             frmPersonelArama = null;
         }
 
+        private void btnBolumEkle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormKapatma();
+            if (Login.yetki == -1)
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                if (Login.yetki == 0 ) //Kullanıcı ekleme işlemi için yetki kontrolü
+                {
+                    if (frmDepartmanEkle == null)
+                    {
+                        frmDepartmanEkle = new frmDepartmanEkle();
+                        frmDepartmanEkle.MdiParent = this;
+                        frmDepartmanEkle.FormClosed += frmDepartmanEkleClosed;
+                        frmDepartmanEkle.Show();
+                    }
+                    else
+                        frmKullaniciEkle.Show();
+                }
+                else
+                    XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void frmDepartmanEkleClosed(object sender, FormClosedEventArgs e)
+        {
+            frmDepartmanEkle= null;
+        }
+
+
+        private void btnPersonelEkle_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            FormKapatma();
+            if (Login.yetki == -1)
+                XtraMessageBox.Show("Öncelikle Giriş Yapmanız Gerekmektedir", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            else
+            {
+                if (Login.yetki == 0) //Personel ekleme işlemi için yetki kontrolü
+                {
+                    if (frmPersonelEkle == null)
+                    {
+                        frmPersonelEkle = new frmPersonelEkle();
+                        frmPersonelEkle.MdiParent = this;
+                        frmPersonelEkle.FormClosed += frmPersonelEkleClosed;
+                        frmPersonelEkle.Show();
+                    }
+                    else
+                        frmPersonelEkle.Show();
+                }
+                else
+                    XtraMessageBox.Show("Bu işlem için yetkiniz yok !", "Yetki Hatası", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private void frmPersonelEkleClosed(object sender, FormClosedEventArgs e)
+        {
+            frmPersonelEkle = null;
+        }
+
         private void FormKapatma()
         {
             if(frmAtikKontrol!=null)
                 frmAtikKontrol.Close();
+            if (frmPersonelEkle != null)
+                frmPersonelEkle.Close();
             if (frmKullaniciEkle != null)
                 frmKullaniciEkle.Close();
             if (frmPersonelArama != null)
@@ -267,6 +328,8 @@ namespace AkbasHoldingVol2
                 frmZimmet.Close();
             if (frmRaporIslem != null)
                 frmRaporIslem.Close();
+            if (frmDepartmanEkle != null)
+                frmDepartmanEkle.Close();
         }
     }
 }

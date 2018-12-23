@@ -117,6 +117,12 @@
     <Compile Include="frmAtikKontrol.Designer.cs">
       <DependentUpon>frmAtikKontrol.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDepartmanEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDepartmanEkle.Designer.cs">
+      <DependentUpon>frmDepartmanEkle.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmKullaniciEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,12 @@
     </Compile>
     <Compile Include="frmPersonelArama.Designer.cs">
       <DependentUpon>frmPersonelArama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPersonelEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPersonelEkle.Designer.cs">
+      <DependentUpon>frmPersonelEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPersonelRapor.cs">
       <SubType>Form</SubType>
@@ -174,9 +186,13 @@
     <Compile Include="Login.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlBaglanti.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmAtikKontrol.resx">
       <DependentUpon>frmAtikKontrol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDepartmanEkle.resx">
+      <DependentUpon>frmDepartmanEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKullaniciEkle.resx">
       <DependentUpon>frmKullaniciEkle.cs</DependentUpon>
@@ -189,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonelArama.resx">
       <DependentUpon>frmPersonelArama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPersonelEkle.resx">
+      <DependentUpon>frmPersonelEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPersonelRapor.resx">
       <DependentUpon>frmPersonelRapor.cs</DependentUpon>
@@ -261,6 +280,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

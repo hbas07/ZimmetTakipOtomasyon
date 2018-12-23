@@ -18,15 +18,17 @@ namespace AkbasHoldingVol2
         {
             InitializeComponent();
         }
-        SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-2RPJPRH;Initial Catalog=AkbasHoldingTest;Integrated Security=True");
+        
+        SqlBaglanti baglan = new SqlBaglanti();
 
         private void btnGiris_Click(object sender, EventArgs e)
         {
-            string yetki;
+            try
+            {
+                string yetki;
             if (txtKullaniciAdi.Text!="" && txtSifre.Text!="")
             {
-                baglanti.Open();
-                SqlCommand komut = new SqlCommand("Select * from tblKullanici where KullaniciAdi=@p1 and Sifre=@p2 ", baglanti);
+                SqlCommand komut = new SqlCommand("Select * from tblKullanici where KullaniciAdi=@p1 and Sifre=@p2 ", baglan.Baglanti());
                 komut.Parameters.AddWithValue("@p1", txtKullaniciAdi.Text);
                 komut.Parameters.AddWithValue("@p2", txtSifre.Text);
                 SqlDataReader dr = komut.ExecuteReader();
@@ -53,10 +55,18 @@ namespace AkbasHoldingVol2
                 {
                     XtraMessageBox.Show("Hatalı Kullanıcı Adı yada Şifre", "Giriş Başarısız", MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
-                baglanti.Close();
+                baglan.Baglanti().Close();
             }
             else
                 XtraMessageBox.Show("Boş Alan Bırakılamaz !", "Giriş Başarısız", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+           
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show("Bağlantı Hatası", ex.ToString(), MessageBoxButtons.OK,MessageBoxIcon.Warning);
+
+            }
         }
 
         private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e) //KULLANICI ADINA SADECE KARAKTER GİRİLEBİLİR

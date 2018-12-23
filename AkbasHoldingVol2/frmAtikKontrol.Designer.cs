@@ -69,20 +69,24 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(285, 19);
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label1.Location = new System.Drawing.Point(53, 60);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(349, 22);
+            this.label1.Size = new System.Drawing.Size(383, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "SİLMEK İSTEDİĞİNİZ ZİMMETİ SEÇİNİZ";
             // 
             // btnZimmetSil
             // 
             this.btnZimmetSil.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnZimmetSil.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnZimmetSil.Appearance.BackColor = System.Drawing.Color.DarkOrange;
+            this.btnZimmetSil.Appearance.BackColor2 = System.Drawing.Color.White;
+            this.btnZimmetSil.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnZimmetSil.Appearance.Options.UseBackColor = true;
             this.btnZimmetSil.Appearance.Options.UseFont = true;
-            this.btnZimmetSil.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.btnZimmetSil.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnZimmetSil.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnZimmetSil.ImageOptions.Image")));
-            this.btnZimmetSil.Location = new System.Drawing.Point(365, 283);
+            this.btnZimmetSil.Location = new System.Drawing.Point(429, 346);
             this.btnZimmetSil.Name = "btnZimmetSil";
             this.btnZimmetSil.Size = new System.Drawing.Size(193, 40);
             this.btnZimmetSil.TabIndex = 2;
@@ -93,9 +97,10 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(306, 345);
+            this.label2.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Location = new System.Drawing.Point(53, 374);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(297, 22);
+            this.label2.Size = new System.Drawing.Size(324, 22);
             this.label2.TabIndex = 4;
             this.label2.Text = "DAHA ÖNCE SİLİNEN ZİMMETLER";
             // 
@@ -103,10 +108,10 @@
             // 
             this.grdAtikKontrol.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.grdAtikKontrol.DataSource = this.spAtikKontrolBilgiBindingSource;
-            this.grdAtikKontrol.Location = new System.Drawing.Point(61, 379);
+            this.grdAtikKontrol.Location = new System.Drawing.Point(57, 408);
             this.grdAtikKontrol.MainView = this.gridView2;
             this.grdAtikKontrol.Name = "grdAtikKontrol";
-            this.grdAtikKontrol.Size = new System.Drawing.Size(796, 200);
+            this.grdAtikKontrol.Size = new System.Drawing.Size(796, 252);
             this.grdAtikKontrol.TabIndex = 6;
             this.grdAtikKontrol.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView2});
@@ -206,10 +211,10 @@
             // 
             this.grdZimmetListe.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.grdZimmetListe.DataSource = this.spZimmetBilgiBindingSource;
-            this.grdZimmetListe.Location = new System.Drawing.Point(61, 60);
+            this.grdZimmetListe.Location = new System.Drawing.Point(57, 85);
             this.grdZimmetListe.MainView = this.gridView1;
             this.grdZimmetListe.Name = "grdZimmetListe";
-            this.grdZimmetListe.Size = new System.Drawing.Size(796, 200);
+            this.grdZimmetListe.Size = new System.Drawing.Size(796, 240);
             this.grdZimmetListe.TabIndex = 7;
             this.grdZimmetListe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -221,7 +226,7 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.Yellow;
+            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.White;
             this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -313,7 +318,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 591);
+            this.ClientSize = new System.Drawing.Size(900, 672);
             this.Controls.Add(this.grdZimmetListe);
             this.Controls.Add(this.grdAtikKontrol);
             this.Controls.Add(this.label2);

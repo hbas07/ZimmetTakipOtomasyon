@@ -64,14 +64,17 @@
             this.txtPersonelAd.Location = new System.Drawing.Point(206, 61);
             this.txtPersonelAd.Name = "txtPersonelAd";
             this.txtPersonelAd.Size = new System.Drawing.Size(100, 28);
-            this.txtPersonelAd.TabIndex = 1;
+            this.txtPersonelAd.TabIndex = 0;
             // 
             // btnArama
             // 
             this.btnArama.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnArama.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnArama.Appearance.BackColor = System.Drawing.Color.LightCoral;
+            this.btnArama.Appearance.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnArama.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnArama.Appearance.Options.UseBackColor = true;
             this.btnArama.Appearance.Options.UseFont = true;
-            this.btnArama.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.btnArama.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnArama.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnArama.ImageOptions.SvgImage")));
             this.btnArama.Location = new System.Drawing.Point(619, 108);
             this.btnArama.Name = "btnArama";
@@ -178,14 +181,17 @@
             // btnPersonelRapor
             // 
             this.btnPersonelRapor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnPersonelRapor.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPersonelRapor.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnPersonelRapor.Appearance.BackColor2 = System.Drawing.Color.Gray;
+            this.btnPersonelRapor.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPersonelRapor.Appearance.Options.UseBackColor = true;
             this.btnPersonelRapor.Appearance.Options.UseFont = true;
-            this.btnPersonelRapor.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.btnPersonelRapor.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnPersonelRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelRapor.ImageOptions.Image")));
             this.btnPersonelRapor.Location = new System.Drawing.Point(600, 179);
             this.btnPersonelRapor.Name = "btnPersonelRapor";
-            this.btnPersonelRapor.Size = new System.Drawing.Size(173, 35);
-            this.btnPersonelRapor.TabIndex = 12;
+            this.btnPersonelRapor.Size = new System.Drawing.Size(177, 54);
+            this.btnPersonelRapor.TabIndex = 3;
             this.btnPersonelRapor.Text = "RAPOR AL";
             this.btnPersonelRapor.Click += new System.EventHandler(this.btnPersonelRapor_Click);
             // 
@@ -205,10 +211,11 @@
             this.txtPersonelSoyad.Location = new System.Drawing.Point(453, 61);
             this.txtPersonelSoyad.Name = "txtPersonelSoyad";
             this.txtPersonelSoyad.Size = new System.Drawing.Size(100, 28);
-            this.txtPersonelSoyad.TabIndex = 2;
+            this.txtPersonelSoyad.TabIndex = 1;
             // 
             // frmPersonelArama
             // 
+            this.AcceptButton = this.btnArama;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(900, 591);

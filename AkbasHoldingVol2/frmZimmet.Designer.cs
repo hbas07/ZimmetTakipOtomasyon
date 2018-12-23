@@ -115,8 +115,8 @@
             this.gridView1.Appearance.EvenRow.BackColor = System.Drawing.Color.Red;
             this.gridView1.Appearance.EvenRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.gridView1.Appearance.EvenRow.Options.UseBackColor = true;
-            this.gridView1.Appearance.Row.BackColor = System.Drawing.Color.Red;
-            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.gridView1.Appearance.Row.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.gridView1.Appearance.Row.BackColor2 = System.Drawing.Color.Red;
             this.gridView1.Appearance.Row.Options.UseBackColor = true;
             this.gridView1.Appearance.SelectedRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.gridView1.Appearance.SelectedRow.BackColor2 = System.Drawing.Color.Blue;
@@ -182,9 +182,12 @@
             // btnZimmetle
             // 
             this.btnZimmetle.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnZimmetle.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnZimmetle.Appearance.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnZimmetle.Appearance.BackColor2 = System.Drawing.Color.DarkKhaki;
+            this.btnZimmetle.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnZimmetle.Appearance.Options.UseBackColor = true;
             this.btnZimmetle.Appearance.Options.UseFont = true;
-            this.btnZimmetle.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.btnZimmetle.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnZimmetle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnZimmetle.ImageOptions.SvgImage")));
             this.btnZimmetle.Location = new System.Drawing.Point(763, 331);
             this.btnZimmetle.Name = "btnZimmetle";
@@ -205,8 +208,8 @@
             // 
             // gridView2
             // 
-            this.gridView2.Appearance.Row.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.gridView2.Appearance.Row.BackColor2 = System.Drawing.Color.Lime;
+            this.gridView2.Appearance.Row.BackColor = System.Drawing.Color.Tomato;
+            this.gridView2.Appearance.Row.BackColor2 = System.Drawing.Color.PaleGreen;
             this.gridView2.Appearance.Row.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.gridView2.Appearance.Row.Options.UseBackColor = true;
             this.gridView2.Appearance.Row.Options.UseFont = true;
@@ -337,14 +340,12 @@
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraGrid.GridControl grdPersonelBilgi;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraGrid.Columns.GridColumn colPersonelID;
         private DevExpress.XtraGrid.Columns.GridColumn colAd;
         private DevExpress.XtraGrid.Columns.GridColumn colSoyad;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmanAdı;
         private DevExpress.XtraGrid.Columns.GridColumn colDepartmanID;
-        private DevExpress.XtraEditors.SimpleButton btnZimmetle;
         private System.Windows.Forms.Label label3;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraGrid.Columns.GridColumn colUrunID;
@@ -353,12 +354,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAdet;
         private DevExpress.XtraGrid.Columns.GridColumn colAktiflikDurumu;
         private DevExpress.XtraGrid.Columns.GridColumn colFirmaID;
-        private DevExpress.XtraGrid.GridControl grdZimmetUrun;
         private System.Windows.Forms.BindingSource spStokBilgiBindingSource3;
         private AkbasHoldingTestDataSet6 akbasHoldingTestDataSet6;
         private System.Windows.Forms.BindingSource vwPersonelBilgiBindingSource;
         private AkbasHoldingTestDataSet6TableAdapters.vw_PersonelBilgiTableAdapter vw_PersonelBilgiTableAdapter;
         private System.Windows.Forms.BindingSource spStokBilgiBindingSource;
         private AkbasHoldingTestDataSet6TableAdapters.sp_StokBilgiTableAdapter sp_StokBilgiTableAdapter;
+        public DevExpress.XtraGrid.GridControl grdPersonelBilgi;
+        public DevExpress.XtraEditors.SimpleButton btnZimmetle;
+        public DevExpress.XtraGrid.GridControl grdZimmetUrun;
     }
 }

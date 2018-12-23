@@ -38,6 +38,8 @@
             this.btnStok = new DevExpress.XtraBars.BarButtonItem();
             this.btnArama = new DevExpress.XtraBars.BarButtonItem();
             this.btnKullaniciEkle = new DevExpress.XtraBars.BarButtonItem();
+            this.btnBolumEkle = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPersonelEkle = new DevExpress.XtraBars.BarButtonItem();
             this.rbnİslem = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -59,9 +61,11 @@
             this.btnRaporİslem,
             this.btnStok,
             this.btnArama,
-            this.btnKullaniciEkle});
+            this.btnKullaniciEkle,
+            this.btnBolumEkle,
+            this.btnPersonelEkle});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 9;
+            this.ribbonControl1.MaxItemId = 11;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbnİslem});
@@ -167,6 +171,30 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnKullaniciEkle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnKullaniciEkle_ItemClick);
             // 
+            // btnBolumEkle
+            // 
+            this.btnBolumEkle.Caption = "DEPARTMAN EKLE";
+            this.btnBolumEkle.Id = 9;
+            this.btnBolumEkle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnBolumEkle.ImageOptions.SvgImage")));
+            this.btnBolumEkle.ItemAppearance.Normal.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnBolumEkle.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnBolumEkle.Name = "btnBolumEkle";
+            this.btnBolumEkle.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBolumEkle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBolumEkle_ItemClick);
+            // 
+            // btnPersonelEkle
+            // 
+            this.btnPersonelEkle.Caption = "PERSONEL EKLE";
+            this.btnPersonelEkle.Id = 10;
+            this.btnPersonelEkle.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelEkle.ImageOptions.Image")));
+            this.btnPersonelEkle.ItemAppearance.Normal.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnPersonelEkle.ItemAppearance.Normal.Options.UseFont = true;
+            this.btnPersonelEkle.Name = "btnPersonelEkle";
+            this.btnPersonelEkle.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnPersonelEkle.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPersonelEkle_ItemClick);
+            // 
             // rbnİslem
             // 
             this.rbnİslem.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
@@ -174,7 +202,7 @@
             this.rbnİslem.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
             this.ribbonPageGroup1});
             this.rbnİslem.Name = "rbnİslem";
-            this.rbnİslem.Text = "Akbaş Holding";
+            this.rbnİslem.Text = "İŞLEMLER";
             // 
             // ribbonPageGroup1
             // 
@@ -187,6 +215,8 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.btnStok);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnArama);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnKullaniciEkle);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnBolumEkle);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnPersonelEkle);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             // 
@@ -204,7 +234,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "frmMain";
-            this.Text = "Akbaş Holding";
+            this.Text = "AKBAŞ HOLDİNG-ZİMMET TAKİP OTOMASYONU";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
@@ -227,5 +257,7 @@
         private DevExpress.XtraBars.BarButtonItem btnArama;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.BarButtonItem btnKullaniciEkle;
+        private DevExpress.XtraBars.BarButtonItem btnBolumEkle;
+        private DevExpress.XtraBars.BarButtonItem btnPersonelEkle;
     }
 }

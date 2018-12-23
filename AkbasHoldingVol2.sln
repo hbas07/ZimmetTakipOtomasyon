@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkbasHoldingVol2", "AkbasHoldingVol2\AkbasHoldingVol2.csproj", "{58399B04-7430-4965-BD0D-3B7A04638AAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AkbasHoldingVol2.Test", "AkbasHoldingVol2.Test\AkbasHoldingVol2.Test.csproj", "{8B1AE84A-33F3-42BC-A6FE-A87584C4306E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{58399B04-7430-4965-BD0D-3B7A04638AAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58399B04-7430-4965-BD0D-3B7A04638AAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58399B04-7430-4965-BD0D-3B7A04638AAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B1AE84A-33F3-42BC-A6FE-A87584C4306E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B1AE84A-33F3-42BC-A6FE-A87584C4306E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B1AE84A-33F3-42BC-A6FE-A87584C4306E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B1AE84A-33F3-42BC-A6FE-A87584C4306E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -49,6 +49,7 @@
             this.tblSatinAlmaTableAdapter = new AkbasHoldingVol2.AkbasHoldingTestDataSet6TableAdapters.tblSatinAlmaTableAdapter();
             this.label6 = new System.Windows.Forms.Label();
             this.btnSatinAlmaRapor = new DevExpress.XtraEditors.SimpleButton();
+            this.btnTemizle = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.tblSatinAlmaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.AkbasHoldingTestDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbFirma.Properties)).BeginInit();
@@ -184,20 +185,22 @@
             this.txtFiyat.Name = "txtFiyat";
             this.txtFiyat.Size = new System.Drawing.Size(143, 28);
             this.txtFiyat.TabIndex = 6;
-            this.txtFiyat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFiyat_KeyPress);
             // 
             // btnKaydet
             // 
             this.btnKaydet.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnKaydet.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Appearance.BackColor = System.Drawing.Color.Teal;
+            this.btnKaydet.Appearance.BackColor2 = System.Drawing.Color.OrangeRed;
+            this.btnKaydet.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.btnKaydet.Appearance.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnKaydet.Appearance.Options.UseBackColor = true;
             this.btnKaydet.Appearance.Options.UseFont = true;
             this.btnKaydet.Appearance.Options.UseForeColor = true;
             this.btnKaydet.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnKaydet.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnKaydet.ImageOptions.SvgImage")));
-            this.btnKaydet.Location = new System.Drawing.Point(156, 409);
+            this.btnKaydet.Location = new System.Drawing.Point(220, 414);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(144, 61);
+            this.btnKaydet.Size = new System.Drawing.Size(162, 61);
             this.btnKaydet.TabIndex = 7;
             this.btnKaydet.Text = "KAYDET";
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
@@ -242,22 +245,45 @@
             // btnSatinAlmaRapor
             // 
             this.btnSatinAlmaRapor.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnSatinAlmaRapor.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSatinAlmaRapor.Appearance.BackColor = System.Drawing.Color.Green;
+            this.btnSatinAlmaRapor.Appearance.BackColor2 = System.Drawing.Color.Snow;
+            this.btnSatinAlmaRapor.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSatinAlmaRapor.Appearance.Options.UseBackColor = true;
             this.btnSatinAlmaRapor.Appearance.Options.UseFont = true;
             this.btnSatinAlmaRapor.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnSatinAlmaRapor.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSatinAlmaRapor.ImageOptions.Image")));
-            this.btnSatinAlmaRapor.Location = new System.Drawing.Point(56, 502);
+            this.btnSatinAlmaRapor.Location = new System.Drawing.Point(49, 502);
             this.btnSatinAlmaRapor.Name = "btnSatinAlmaRapor";
-            this.btnSatinAlmaRapor.Size = new System.Drawing.Size(340, 57);
+            this.btnSatinAlmaRapor.Size = new System.Drawing.Size(347, 57);
             this.btnSatinAlmaRapor.TabIndex = 11;
             this.btnSatinAlmaRapor.Text = "SATIN ALMA GEÇMİŞİ GÖRÜNTÜLE";
             this.btnSatinAlmaRapor.Click += new System.EventHandler(this.btnSatinAlmaRapor_Click);
+            // 
+            // btnTemizle
+            // 
+            this.btnTemizle.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnTemizle.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnTemizle.Appearance.BackColor2 = System.Drawing.Color.Silver;
+            this.btnTemizle.Appearance.BorderColor = System.Drawing.Color.Red;
+            this.btnTemizle.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTemizle.Appearance.Options.UseBackColor = true;
+            this.btnTemizle.Appearance.Options.UseBorderColor = true;
+            this.btnTemizle.Appearance.Options.UseFont = true;
+            this.btnTemizle.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.btnTemizle.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnTemizle.ImageOptions.SvgImage")));
+            this.btnTemizle.Location = new System.Drawing.Point(49, 414);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(165, 61);
+            this.btnTemizle.TabIndex = 12;
+            this.btnTemizle.Text = "TEMİZLE";
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click);
             // 
             // frmSatinAlma
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1147, 591);
+            this.Controls.Add(this.btnTemizle);
             this.Controls.Add(this.btnSatinAlmaRapor);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.reportViewer1);
@@ -291,18 +317,11 @@
         }
 
         #endregion
-
-        private DevExpress.XtraEditors.ComboBoxEdit cmbFirma;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblParcaTur;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbParca;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtAdet;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.DateEdit dtedtTarih;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtFiyat;
-        private DevExpress.XtraEditors.SimpleButton btnKaydet;
         private System.Windows.Forms.Label label5;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource tblSatinAlmaBindingSource;
@@ -310,5 +329,12 @@
         private AkbasHoldingTestDataSet6TableAdapters.tblSatinAlmaTableAdapter tblSatinAlmaTableAdapter;
         private System.Windows.Forms.Label label6;
         private DevExpress.XtraEditors.SimpleButton btnSatinAlmaRapor;
+        public DevExpress.XtraEditors.ComboBoxEdit cmbFirma;
+        public DevExpress.XtraEditors.ComboBoxEdit cmbParca;
+        public System.Windows.Forms.TextBox txtAdet;
+        public DevExpress.XtraEditors.DateEdit dtedtTarih;
+        public System.Windows.Forms.TextBox txtFiyat;
+        public DevExpress.XtraEditors.SimpleButton btnKaydet;
+        private DevExpress.XtraEditors.SimpleButton btnTemizle;
     }
 }

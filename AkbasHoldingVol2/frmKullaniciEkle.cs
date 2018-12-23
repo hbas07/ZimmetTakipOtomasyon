@@ -17,36 +17,34 @@ namespace AkbasHoldingVol2
         public frmKullaniciEkle()
         {
             InitializeComponent();
-        }
+        }       
 
-        SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-2RPJPRH;Initial Catalog=AkbasHoldingTest;Integrated Security=True");
+        SqlBaglanti baglan = new SqlBaglanti();
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
             Boolean isimkontrol = true;
-            baglanti.Open();
-            SqlCommand komut1 = new SqlCommand("SELECT KullaniciAdi FROM tblKullanici", baglanti);
+            SqlCommand komut1 = new SqlCommand("SELECT KullaniciAdi FROM tblKullanici", baglan.Baglanti());
             SqlDataReader dr = komut1.ExecuteReader();
             while(dr.Read())
             {
                 if (dr[0].ToString() == txtKullaniciAdi.Text)
                     isimkontrol = false;
             }
-            baglanti.Close();
+            baglan.Baglanti().Close();
             if (cmbYetki.SelectedIndex!=-1 && cmbDepartman.SelectedIndex!=-1 && txtKullaniciAdi.Text!="" && txtSifre.Text!="")
             { 
                 if(isimkontrol)
                 {
                     int yetkiID = cmbYetki.SelectedIndex ;
                     int departmanID = cmbDepartman.SelectedIndex + 1;
-                    SqlCommand komut = new SqlCommand("INSERT tblKullanici VALUES (@p1,@p2,@p3,@p4)", baglanti);
+                    SqlCommand komut = new SqlCommand("INSERT tblKullanici VALUES (@p1,@p2,@p3,@p4)", baglan.Baglanti());
                     komut.Parameters.AddWithValue("@p1",txtKullaniciAdi.Text);
                     komut.Parameters.AddWithValue("@p2",Convert.ToInt32(txtSifre.Text));
                     komut.Parameters.AddWithValue("@p3",yetkiID);
                     komut.Parameters.AddWithValue("@p4",departmanID);
-                    baglanti.Open();
                     komut.ExecuteNonQuery();
-                    baglanti.Close();
+                    baglan.Baglanti().Close();
                     XtraMessageBox.Show("Kullanıcı eklendi !", "İşlem başarılı ", MessageBoxButtons.OK);
                 }
                 else
@@ -54,9 +52,8 @@ namespace AkbasHoldingVol2
             }
             else
                 XtraMessageBox.Show("Kullanıcı ekleme başarısız.Tüm alanları doldurmanız gerekmektedir !", "İşlem başarısız ", MessageBoxButtons.OK);
-
-
         }
+        
         private void txtKullaniciAdi_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar)
@@ -66,6 +63,25 @@ namespace AkbasHoldingVol2
         private void txtSifre_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
+
+        private void frmKullaniciEkle_Load(object sender, EventArgs e)
+        {
+            SqlCommand komut = new SqlCommand("SELECT departmanAdI FROM tblDepartman", baglan.Baglanti());
+            SqlDataReader dr = komut.ExecuteReader();
+            while(dr.Read())
+            {
+                cmbDepartman.Items.Add(dr[0]);
+            }
+            baglan.Baglanti().Close();
+        }
+
+        private void btnTemizle_Click(object sender, EventArgs e)
+        {
+            txtKullaniciAdi.Text = "";
+            txtSifre.Text = "";
+            cmbDepartman.SelectedIndex = -1;
+            cmbYetki.SelectedIndex = -1;
         }
     }
 }

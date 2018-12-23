@@ -19,7 +19,7 @@ namespace AkbasHoldingVol2
             InitializeComponent();
         }
 
-        SqlConnection baglanti = new SqlConnection(@"Data Source=DESKTOP-2RPJPRH;Initial Catalog=AkbasHoldingTest;Integrated Security=True");
+        SqlBaglanti baglan = new SqlBaglanti();
 
         private void btnArama_Click(object sender, EventArgs e)
         {   
@@ -28,10 +28,9 @@ namespace AkbasHoldingVol2
             Boolean personelKontrol = false;
             try
             {
-                baglanti.Open();
                 SqlCommand komut = new SqlCommand("SELECT p.PersonelID,p.Ad,p.Soyad,d.DepartmanAdı,d.DepartmanID " +
                      "FROM tblPersonel p INNER JOIN tblDepartman d ON (p.DepartmanID = d.DepartmanID)" +
-                     "WHERE p.Ad=@p1 AND p.Soyad=@p2", baglanti);
+                     "WHERE p.Ad=@p1 AND p.Soyad=@p2", baglan.Baglanti());
                 komut.Parameters.AddWithValue("@p1", txtPersonelAd.Text);
                 komut.Parameters.AddWithValue("@p2", txtPersonelSoyad.Text);
                 SqlDataReader dr = komut.ExecuteReader();
@@ -58,16 +57,15 @@ namespace AkbasHoldingVol2
                 }
                 else
                     btnPersonelRapor.Enabled = true;
-                baglanti.Close();
+                baglan.Baglanti().Close();
 
                 //PERSONELİN ZİMMETLİ EŞYALARINI LİSTELEME
-                baglanti.Open();
                 SqlCommand komut2 = new SqlCommand("SELECT s.Urun,f.Firma,d.DepartmanID " +
                        " FROM tblZimmet z INNER JOIN tblStok s ON (z.UrunID = s.UrunID AND z.FirmaID = s.FirmaID) " +
                        " INNER JOIN tblPersonel p ON (z.PersonelID = p.PersonelID) " +
                        " INNER JOIN tblFirma f ON (s.FirmaID = f.FirmaID) " +
                        " INNER JOIN tblDepartman d ON (d.DepartmanID = p.DepartmanID)" +
-                       "WHERE Ad=@p1 AND Soyad=@p2", baglanti);
+                       "WHERE Ad=@p1 AND Soyad=@p2", baglan.Baglanti());
                 komut2.Parameters.AddWithValue("@p1", txtPersonelAd.Text);
                 komut2.Parameters.AddWithValue("@p2", txtPersonelSoyad.Text);
                 SqlDataReader dr2 = komut2.ExecuteReader();
@@ -78,7 +76,7 @@ namespace AkbasHoldingVol2
                         lstZimmetEsya.Items.Add(dr2[1] + "\t \t" + dr2[0]);
                     }
                 }
-                baglanti.Close();
+                baglan.Baglanti().Close();
             }
             catch (Exception hata)
             {

@@ -109,19 +109,23 @@
             // btnGiris
             // 
             this.btnGiris.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnGiris.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGiris.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnGiris.Appearance.BackColor2 = System.Drawing.SystemColors.ActiveCaption;
+            this.btnGiris.Appearance.Font = new System.Drawing.Font("Monotype Corsiva", 10.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGiris.Appearance.Options.UseBackColor = true;
             this.btnGiris.Appearance.Options.UseFont = true;
-            this.btnGiris.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Style3D;
+            this.btnGiris.ButtonStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
             this.btnGiris.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGiris.ImageOptions.Image")));
             this.btnGiris.Location = new System.Drawing.Point(335, 234);
             this.btnGiris.Name = "btnGiris";
-            this.btnGiris.Size = new System.Drawing.Size(134, 46);
+            this.btnGiris.Size = new System.Drawing.Size(153, 46);
             this.btnGiris.TabIndex = 2;
             this.btnGiris.Text = "GİRİŞ";
             this.btnGiris.Click += new System.EventHandler(this.btnGiris_Click);
             // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnGiris;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
@@ -152,10 +156,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtKullaniciAdi;
-        private System.Windows.Forms.TextBox txtSifre;
-        private DevExpress.XtraEditors.SimpleButton btnGiris;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.TextBox txtKullaniciAdi;
+        public System.Windows.Forms.TextBox txtSifre;
+        public DevExpress.XtraEditors.SimpleButton btnGiris;
     }
 }
